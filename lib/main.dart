@@ -40,7 +40,7 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome to Carbox'),
+        title: const Text('Добродојдовте на Карбокс'),
       ),
       body: pages[currentPage],
       floatingActionButton: FloatingActionButton(
