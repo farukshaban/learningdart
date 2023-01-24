@@ -12,12 +12,12 @@ class HomePage extends StatelessWidget {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (BuildContext context) {
-                return LearnFlutterPage();
+                return const LearnFlutterPage();
               },
             ),
           );
         },
-        child: const Text("Learn Flutter"),
+        child: const Text("Кон Страницата"),
       ),
     );
   }

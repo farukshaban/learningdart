@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:learningdart/favorites_page.dart';
 import 'package:learningdart/home_page.dart';
+import 'package:learningdart/locations_page.dart';
 import 'package:learningdart/profile_page.dart';
 
 void main() {
@@ -28,12 +30,17 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   int currentPage = 0;
-  List<Widget> pages = [const HomePage(), const ProfilePage()];
+  List<Widget> pages = [
+    const HomePage(),
+    const ProfilePage(),
+    const FavoritesPage(),
+    const LocationsPage()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Carbox'),
+        title: const Text('Welcome to Carbox'),
       ),
       body: pages[currentPage],
       floatingActionButton: FloatingActionButton(
@@ -46,6 +53,9 @@ class _RootPageState extends State<RootPage> {
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
           NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+          NavigationDestination(icon: Icon(Icons.favorite), label: 'Favorites'),
+          NavigationDestination(
+              icon: Icon(Icons.gps_fixed_rounded), label: 'Locations'),
         ],
         onDestinationSelected: (int index) {
           setState(() {
